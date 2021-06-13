@@ -1,0 +1,18 @@
+server:
+  port: 8090
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bowling
+    username: ""
+    password: ""
+app:
+ strikebonus: 10
+ sparebonus: 5
