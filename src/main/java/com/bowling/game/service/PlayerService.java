@@ -1,7 +1,9 @@
 package com.bowling.game.service;
 
+import com.bowling.game.entities.LaneEntity;
 import com.bowling.game.entities.PlayerEntity;
 import com.bowling.game.models.GameParticipantModel;
+import com.bowling.game.models.LaneModel;
 import com.bowling.game.models.PlayerModel;
 import com.bowling.game.repositories.LaneRepository;
 import com.bowling.game.repositories.PlayerRepository;
@@ -37,8 +39,11 @@ public class PlayerService {
 
     public void startNewGame(GameParticipantModel gameParticipantModel) {
         int laneId = laneRepository.findFreeLane();
+        laneRepository.save(modelToEntityConverter.convertLaneModelToEntity(new LaneModel(laneId, false)));
         gameParticipantModel.setLaneId(laneId);
         gameParticipantModel.setGameid(UUID.randomUUID().hashCode());
         scoreCalculator.startGame(gameParticipantModel.getGameid(), gameParticipantModel.getPlayerIds(), laneId);
+        laneRepository.save(modelToEntityConverter.convertLaneModelToEntity(new LaneModel(laneId, true)));
+
     }
 }

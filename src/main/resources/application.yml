@@ -16,3 +16,4 @@ spring:
 app:
  strikebonus: 10
  sparebonus: 5
+ numberOfPplAllowedInLane: 3

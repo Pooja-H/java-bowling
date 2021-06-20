@@ -12,7 +12,7 @@ public class LaneEntity {
     @Column(name = "laneId")
     private int laneId;
     @Column(name = "isFree")
-    private String isFree;
+    private boolean isFree;
 
     public int getLaneId() {
         return laneId;
@@ -22,11 +22,11 @@ public class LaneEntity {
         this.laneId = laneId;
     }
 
-    public String getIsFree() {
+    public boolean getIsFree() {
         return isFree;
     }
 
-    public void setIsFree(String isFree) {
+    public void setIsFree(boolean isFree) {
         this.isFree = isFree;
     }
 }
