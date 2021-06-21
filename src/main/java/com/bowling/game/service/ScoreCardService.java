@@ -17,7 +17,7 @@ public class ScoreCardService {
     private PlayerRepository playerRepository;
 
     public List<ScoreCardEntity> getScoreBoardOfPlayer(int gameId, int playerId) {
-        return scoreCardRepository.findByGameidAndPlayerid(gameId, playerId);
+        return scoreCardRepository.findByGameidAndPlayerId(gameId, playerId);
     }
 
     public String getWinnerForGame(int gameId) {

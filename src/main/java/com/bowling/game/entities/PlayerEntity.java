@@ -7,7 +7,7 @@ import java.util.Objects;
 @Table(name = "player_details")
 public class PlayerEntity {
     @Id
-    @Column(name = "player_id")
+    @Column(name = "playerId")
     private int playerId;
 
     @Column(name = "name")
