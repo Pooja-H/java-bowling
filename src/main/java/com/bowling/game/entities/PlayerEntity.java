@@ -7,14 +7,15 @@ import java.util.Objects;
 @Table(name = "player_details")
 public class PlayerEntity {
     @Id
-    @Column(name = "playerId")
-    private int playerId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "playerid")
+    private int playerid;
 
     @Column(name = "name")
     private String name;
 
     public PlayerEntity(int playerId, String name) {
-        this.playerId = playerId;
+        this.playerid = playerid;
         this.name = name;
     }
 
@@ -22,11 +23,11 @@ public class PlayerEntity {
     }
 
     public int getPlayerId() {
-        return playerId;
+        return playerid;
     }
 
     public void setPlayerId(int playerId) {
-        this.playerId = playerId;
+        this.playerid = playerId;
     }
 
     public String getName() {
@@ -42,11 +43,11 @@ public class PlayerEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PlayerEntity that = (PlayerEntity) o;
-        return playerId == that.playerId && Objects.equals(name, that.name);
+        return playerid == that.playerid && Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playerId, name);
+        return Objects.hash(playerid, name);
     }
 }

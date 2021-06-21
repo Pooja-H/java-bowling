@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "score_board", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "playerId"),
+        @UniqueConstraint(columnNames = "playerid"),
         @UniqueConstraint(columnNames = "frame")})
 @IdClass(CompositeClass.class)
 public class ScoreCardEntity  implements Serializable {
@@ -17,8 +17,8 @@ public class ScoreCardEntity  implements Serializable {
     @Column(name = "laneid")
     private int laneid;
     @Id
-    @Column(name = "playerId")
-    private int playerId;
+    @Column(name = "playerid")
+    private int playerid;
     @Id
     @Column(name = "frame")
     private int frame;
@@ -38,7 +38,7 @@ public class ScoreCardEntity  implements Serializable {
     public ScoreCardEntity(int gameid, int laneid, int player_id, int frame, int ball1_score, int ball2_score, int ball3_score, int framescore) {
         this.gameid = gameid;
         this.laneid = laneid;
-        this.playerId = player_id;
+        this.playerid = player_id;
         this.frame = frame;
         this.ball1_score = ball1_score;
         this.ball2_score = ball2_score;
@@ -63,11 +63,11 @@ public class ScoreCardEntity  implements Serializable {
     }
 
     public int getPlayer_id() {
-        return playerId;
+        return playerid;
     }
 
     public void setPlayer_id(int player_id) {
-        this.playerId = player_id;
+        this.playerid = player_id;
     }
 
     public int getFrame() {

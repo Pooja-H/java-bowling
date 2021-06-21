@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping("/player")
 public class PlayerController {
@@ -29,6 +31,8 @@ public class PlayerController {
 
     @PostMapping("/create")
     public ResponseEntity<String> createPlayer(@RequestBody PlayerModel playerModel) {
+        if (Objects.isNull(playerModel))
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Player Details are mandatory");
         return ResponseEntity.ok("Saved Player with Id: " + playerService.savePlayerDetails(playerModel));
     }
 

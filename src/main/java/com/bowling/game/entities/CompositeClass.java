@@ -4,16 +4,16 @@ import java.io.Serializable;
 
 public class CompositeClass implements Serializable {
 
-    private int playerId;
+    private int playerid;
     private int frame;
     private int gameid;
 
     public int getPlayerId() {
-        return playerId;
+        return playerid;
     }
 
     public void setPlayerId(int playerId) {
-        this.playerId = playerId;
+        this.playerid = playerId;
     }
 
     public int getFrame() {

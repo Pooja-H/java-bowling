@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface ScoreCardRepository extends JpaRepository<ScoreCardEntity, Integer> {
 
-    List<ScoreCardEntity> findByGameidAndPlayerId(int gameid, int playerid);
+    List<ScoreCardEntity> findByGameidAndPlayerid(int gameid, int playerid);
 
     @Query(value = "select player_id,sum(framescore) AS total_score from score_board where gameid = :gameid group by player_id ORDER BY total_score desc limit 1", nativeQuery = true)
-    int getWinnerPlayerIdForGameId(int gameid);
+    int getWinnerPlayeridForGameId(int gameid);
 }

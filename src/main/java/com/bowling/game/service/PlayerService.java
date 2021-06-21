@@ -34,7 +34,7 @@ public class PlayerService {
     }
 
     public PlayerEntity getPlayerDetails(int playerId) {
-        return playerRepository.findByPlayerId(playerId);
+        return playerRepository.findByPlayerid(playerId);
     }
 
     public void startNewGame(GameParticipantModel gameParticipantModel) {

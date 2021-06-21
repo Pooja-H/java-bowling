@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 )
 public class PlayerModel {
 
-    @JsonProperty("player_id")
+    @JsonProperty("playerId")
     private int playerId;
     @JsonProperty("name")
     private String name;
